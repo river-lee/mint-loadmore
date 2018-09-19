@@ -257,7 +257,7 @@
 
       checkBottomReached() {
         if (this.scrollEventTarget === window) {
-          return document.body.scrollTop + document.documentElement.clientHeight === document.body.scrollHeight;
+          return this.getScrollTop(this.scrollEventTarget) + document.documentElement.clientHeight === document.body.scrollHeight;
         } else {
           return this.$el.getBoundingClientRect().bottom <= this.scrollEventTarget.getBoundingClientRect().bottom;
         }
